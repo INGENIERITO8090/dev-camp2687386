@@ -1,0 +1,51 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "devcamp-2687386",
+    "dateExported": "2023-10-20T23:03:09.980Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "b4d2b5fa-1af4-4831-82a4-909a5e25d5e1",
+            "colId": "2dcbc7a7-7271-4307-9be3-0d119d91d3df",
+            "containerId": "",
+            "name": "htth",
+            "url": "http://127.0.0.1:5000/bootcamps/5",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2023-10-20T22:40:34.741Z",
+            "modified": "2023-10-20T22:53:36.814Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "aeba68a0-aeb7-4225-aca8-07d0c656fd67",
+            "colId": "2dcbc7a7-7271-4307-9be3-0d119d91d3df",
+            "containerId": "",
+            "name": "nuevo bootcamp",
+            "url": "http://127.0.0.1:5000/bootcamps",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2023-10-20T22:56:43.072Z",
+            "modified": "2023-10-20T22:57:04.099Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "d3a57929-26f4-4811-ab5d-d49559870805",
+            "colId": "2dcbc7a7-7271-4307-9be3-0d119d91d3df",
+            "containerId": "",
+            "name": "editar ",
+            "url": "http://127.0.0.1:5000/bootcamps/2",
+            "method": "PUT",
+            "sortNum": 30000,
+            "created": "2023-10-20T22:59:35.759Z",
+            "modified": "2023-10-20T22:59:55.999Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        }
+    ]
+}

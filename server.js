@@ -1,10 +1,22 @@
 const express = require('express') 
 const dotenv =require('dotenv') 
 const colors = require('colors')
+const connectionDB = require('./config/bd')
+// dependencias de rutas 
+const bootcampRoutes = require('./routes/bootcampRoutes')
+
 dotenv.config(
 { path:'./config/.env'}
 )
-app = express()
+
+
+connectionDB()
+const app = express()
+app.use(express.json())
+// conectar la srutas al objeto app 
+app.use('/api/v1/devcamp/bootcamps',bootcampRoutes)
+
+
 
 // rutas de prueba 
 app.get('/prueba/:id',(request,response)=>{
@@ -14,40 +26,7 @@ app.get('/prueba/:id',(request,response)=>{
 // RUTAS DE BOOTCAMPS 
 // endponint 
 // consultar 
-app.get('/bootcamps',(request,response)=>{
-response.json({
-  success:true,
-  mgs:"aqui se mostraran todos los bootcamps"
-})})
-// bootcaps por id
-app.get('/bootcamps/:id',(request,response)=>{
-    response.json({
-      success:true,
-      mgs:"aqui se mostrara el bootcamps"+request.params.id
-    })})
 
-
-// crear un bootcamp
-    app.post('/bootcamps',(request,response)=>{
-        response.json({
-          success:true,
-          mgs:"aqui se crea un  bootcamp"
-        })})
-// actualizar un bootcamp por id 
-
-app.put('/bootcamps/:id',(request,response)=>{
-    response.json({
-      success:true,
-      mgs:"aqui se editara  el bootcamp"+request.params.id
-    })}) 
-
-// bootcaps borrar  id
-
-app.delete('/bootcamps/:id',(request,response)=>{
-    response.json({
-      success:true,
-      mgs:"aqui se eliminara   el bootcamp"+request.params.id
-    })}) 
 
 
 //  Usuarios 
@@ -162,43 +141,6 @@ app.get('/reviews',(request,response)=>{
           success:true,
           mgs:"aqui se eliminara   el review"+request.params.id
         })}) 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 app.listen( process.env.PUERTO,()=> {

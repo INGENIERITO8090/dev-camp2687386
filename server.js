@@ -4,7 +4,8 @@ const colors = require('colors')
 const connectionDB = require('./config/bd')
 // dependencias de rutas 
 const bootcampRoutes = require('./routes/bootcampRoutes')
-
+const coursesRoutes = require('./routes/coursesRoutes') 
+const reviewsRoutes = require('./routes/reviewsRoutes')
 dotenv.config(
 { path:'./config/.env'}
 )
@@ -15,7 +16,8 @@ const app = express()
 app.use(express.json())
 // conectar la srutas al objeto app 
 app.use('/api/v1/devcamp/bootcamps',bootcampRoutes)
-
+app.use('/api/v1/devcamp/courses', coursesRoutes)
+app.use('/api/v1/devcamp/reviews', reviewsRoutes)
 
 
 // rutas de prueba 

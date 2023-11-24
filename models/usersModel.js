@@ -45,5 +45,18 @@ userSchema.pre('save',async function(){
 // metodo para comparar paswordm del usuario versus password de el body 
 userSchema.methods.compararPassword= async function(password0){
  return  bycript.compare(password0,this.password)
+} 
+
+userSchema.methods.generarJWT= function(){
+    return jwt.sign({
+        id: this._id,
+        email: this.email
+                },
+            process.env.JWT_SECRET_KEY,
+        {
+            expiresIn: process.env.JWT_EXPIRE
+        }
+    )
 }
+
 module.exports =mongoose.model('User', userSchema)

@@ -2,7 +2,9 @@ const express  = require('express')
 const BootcampModel =  require('../models/bootcampModel')
 // definir un ruteador 
 const router = express.Router()
-const mongoose = require('mongoose')
+const mongoose = require('mongoose') 
+
+const {protect , authorize} = require ('../middleware/auth')
 router.get('/',async (request,response)=>{
    
     // utilizar el modelo para seleccionar el modelo de la base de datos
@@ -99,7 +101,7 @@ if(bootcamp){
 
 
 // crear un bootcamp
-    router.post('/', async (request,response)=>{ 
+    router.post('/', protect, async (request,response)=>{ 
 
         // el nuevo bootcamp vendra de el nuevo body del cliente 
         // atraves de el body de la request 

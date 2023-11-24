@@ -9,7 +9,7 @@ const ReviewsSchema = new mongoose.Schema({
         "el titulo es requerido "
     ],
     maxlength:[
-        20," el titulo de la  review no puede ser mayor a puede ser mayor a 20 caracteres"
+        20," el titulo de la   review no puede ser mayor a puede ser mayor a 20 caracteres"
     ]
     
  }, 
